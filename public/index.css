@@ -11,6 +11,7 @@ body {
   //min-width: 750px;
   //overflow: hidden;
   background-image: url("./images/genshin-impact-26.jpg");
+  background-size: cover;
   background-attachment: fixed;
 }
 
