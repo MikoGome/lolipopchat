@@ -44,12 +44,12 @@ socket.on("chat", data => {
       document.getElementById("together").style.animationTimingFunction = "ease-in";
     }, 2500);
   }
-  if(data.trim() != ""){
+  if(data != ""){
     if(data == my_message){
       message.setAttribute("class", "me");
       my_message = "";
     }
-   message.innerHTML = data;
+   message.innerHTML = data.trim();
    document.getElementById("message_box").appendChild(message);
    document.getElementById("message_box").scrollTo(0, document.getElementById("message_box").scrollHeight)
   //message.scrollIntoView(false);
