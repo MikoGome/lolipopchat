@@ -149,6 +149,7 @@ function selfBoxAppearanceMiko() {
   }, 100);
   setInterval( () => {
     socket.emit("mikoIsOnline");
+    socket.emit("away", document.visibilityState );
   }, 1000);
 }
 
@@ -180,6 +181,7 @@ function selfBoxAppearanceMochi() {
   }, 100);
   setInterval( () => {
     socket.emit("mochiIsOnline");
+    socket.emit("away", document.visibilityState );
   }, 1000);
 }
 
@@ -239,9 +241,9 @@ socket.on("typing", () => {
   }, 1500);
 });
 
-document.addEventListener("visibilitychange", () => {
+/*document.addEventListener("visibilitychange", () => {
   socket.emit("away", document.visibilityState );
-});
+}); */
 
 let away1;
 socket.on("away", status => {
@@ -257,7 +259,7 @@ socket.on("away", status => {
     document.getElementById("friend_box").style.transition = "all 1s";
     document.getElementById("friend_box").style.filter = "brightness(0.5)";
     document.getElementById("friend_box").style.backgroundPositionY = "120%";
-  }, 3000);
+  }, 2000);
   }
 });
 
