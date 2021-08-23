@@ -201,7 +201,7 @@ function friendBoxAppearanceMochi() {
 let type;
 document.getElementById("message_write_box").addEventListener("keypress", (event) => {
   clearTimeout(type);
-  if(event.keyCode != 08 && event.keyCode != 13){
+  if(event.keyCode != 08 && event.keyCode != 13 && event.keyCode != 32){
     socket.emit("typing");
     document.getElementById("self_bubble").style.transition = "all 0.25s linear";
     document.getElementById("self_bubble").style.opacity = "1";
