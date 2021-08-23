@@ -22,6 +22,10 @@ const io = socket(server);
 
 io.on("connection", socket => {
   console.log("socket connection made:", socket.id);
+  
+  socket.on("password", () => {
+    io.sockets.emit("password", {"passwordMiko": "2182Haruhi", "passwordMochi": "Mashiro2607"});
+  });
 
   socket.on("chat", data => {
     io.sockets.emit("chat", data);
