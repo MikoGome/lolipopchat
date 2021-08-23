@@ -180,6 +180,7 @@ function selfBoxAppearanceMochi() {
   }, 100);
   setInterval( () => {
     socket.emit("mochiIsOnline");
+    socket.emit("away", document.visibilityState );
   }, 1000);
 }
 
@@ -239,9 +240,9 @@ socket.on("typing", () => {
   }, 1500);
 });
 
-document.addEventListener("visibilitychange", () => {
+/*document.addEventListener("visibilitychange", () => {
   socket.emit("away", document.visibilityState );
-});
+});*/
 
 let away1;
 socket.on("away", status => {
