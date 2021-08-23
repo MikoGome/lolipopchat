@@ -68,10 +68,18 @@ function character_choose (element) {
   element.children[1].outerHTML = "<label>Password: <input type='password' autofocus id='inputpassword' onkeypress='validation(event)'></label>"
 }
 
+let password1;
+let password2;
+socket.on ("password", password => {
+  password1 = password.passwordMiko;
+  password2 = password.passwordMochi;
+});
+
 function validation(event) {
   document.getElementById("inputpassword").style.removeProperty("animation-name");
   document.getElementById("inputpassword").style.removeProperty("animation-duration");
-  if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Miko" && document.getElementById("inputpassword").value == "2182Haruhi") {
+  socket.emit("password");
+  if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Miko" && document.getElementById("inputpassword").value == password1) {
     document.getElementById("fakeboard").style.display = "none";
     document.getElementById("login").style.display = "none";
     selfBoxAppearanceMiko();
@@ -79,7 +87,7 @@ function validation(event) {
     socket.emit("here", "miko");
     //socket.emit("appearance", "miko");
   }
-  else if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Mochi" && document.getElementById("inputpassword").value == "Mashiro2607"){
+  else if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Mochi" && document.getElementById("inputpassword").value == password2){
     document.getElementById("fakeboard").style.display = "none";
     document.getElementById("login").style.display = "none";
     selfBoxAppearanceMochi();
