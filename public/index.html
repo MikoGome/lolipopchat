@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Miko and Mochi's Personal Chatroom</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
+    <link href="./index.css" rel="stylesheet">
+  </head>
+  <body class="example">
+    <header>
+      <h1 id="header1">Miko and Mochi's</h1><h1 id="header2">Personal Chatroom</h1>
+    </header>
+    <main>
+      <div id="fakeboard">
+      </div>
+      <div id="login">
+        <h1 id="identity">Who are you?</h1>
+          <div id="Miko" onclick="character_choose(this); this.onclick=null">
+            <figure id="MikoPicture">
+            </figure>
+            <h2>Miko</h2>
+          </div>
+          <div id="Mochi" onclick="character_choose(this); this.onclick=null">
+            <figure id="MochiPicture">
+            </figure>
+            <h2>Mochi</h2>
+          </div>
+      </div>
+      <div id="friend_box_outline">
+        <div id="friend_box_background">
+          <div id="friend_box">
+            <div id="friend_bubble">
+              <img src= "/images/speechbubble.gif" draggable="false" alt="speech bubble">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="chat_box">
+        <ul id="message_box" class="example">
+        </ul>
+        <input type="text" id="message_write_box" onkeypress="messageSend_Enter(event)">
+        <button id="message_submit" onclick="messageSend()">send</button>
+      </div>
+      <div id="self_box_outline">
+        <div id="self_box_background">
+          <div id="self_box">
+            <div id="self_bubble">
+              <img src= "/images/speechbubble.gif" draggable="false" alt="speech bubble">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="shiina">
+        <img draggable="false" src="./images/shiina.png">
+      </div>
+      <div id="together">
+        <img draggable="false" src="./images/Together.jpg">
+      </div>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>
