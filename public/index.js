@@ -44,7 +44,7 @@ socket.on("chat", data => {
       document.getElementById("together").style.animationTimingFunction = "ease-in";
     }, 2500);
   }
-  if(data != ""){
+  if(data.trim() != ""){
     if(data == my_message){
       message.setAttribute("class", "me");
       my_message = "";
