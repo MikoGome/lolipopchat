@@ -45,6 +45,7 @@ header {
 }
 
 #friend_box_outline {
+  display: block;
   background-color: rgba(72, 72, 72, 0.35);
   height: 800px;
   width: 20%;
@@ -71,6 +72,7 @@ header {
 }
 
 #self_box_outline {
+  display:block;
   background-color: rgba(72, 72, 72, 0.35);
   height: 800px;
   width: 20%;
