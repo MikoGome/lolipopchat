@@ -241,9 +241,9 @@ socket.on("typing", () => {
   }, 1500);
 });
 
-/*document.addEventListener("visibilitychange", () => {
+document.addEventListener("visibilitychange", () => {
   socket.emit("away", document.visibilityState );
-}); */
+}); 
 
 let away1;
 socket.on("away", status => {
