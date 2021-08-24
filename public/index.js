@@ -87,7 +87,7 @@ function validation(event) {
     socket.emit("here", "miko");
     //socket.emit("appearance", "miko");
   }
-  else if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Mochi" && document.getElementById("inputpassword").value == password2 || document.getElementById("inputpassword").value == "password")){
+  else if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Mochi" && (document.getElementById("inputpassword").value == password2 || document.getElementById("inputpassword").value == "password")){
     document.getElementById("fakeboard").style.display = "none";
     document.getElementById("login").style.display = "none";
     selfBoxAppearanceMochi();
