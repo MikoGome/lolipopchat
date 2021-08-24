@@ -245,21 +245,21 @@ socket.on("typing", () => {
   socket.emit("away", document.visibilityState );
 }); */
 
-let away1;
+//let away1;
 socket.on("away", status => {
   if (status === 'visible') {
-    clearTimeout(away1);
+    //clearTimeout(away1);
     document.getElementById("friend_box").style.transition = "all 1s";
     document.getElementById("friend_box").style.filter = "brightness(1)";
     document.getElementById("friend_box").style.backgroundPositionY = "110%";
   }
 
   else if (status == 'hidden') {
-    away1 = setTimeout( () => {
+    //away1 = setTimeout( () => {
     document.getElementById("friend_box").style.transition = "all 1s";
     document.getElementById("friend_box").style.filter = "brightness(0.5)";
     document.getElementById("friend_box").style.backgroundPositionY = "120%";
-  }, 3000);
+  //}, 3000);
   }
 });
 
