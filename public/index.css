@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
 
-@media (max-width: 750px) {
+@media screen and (max-width: 750px) {
  #header1 {
    display: none;
   }
