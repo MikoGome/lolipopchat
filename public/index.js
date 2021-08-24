@@ -79,7 +79,7 @@ function validation(event) {
   document.getElementById("inputpassword").style.removeProperty("animation-name");
   document.getElementById("inputpassword").style.removeProperty("animation-duration");
   socket.emit("password");
-  if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Miko" && document.getElementById("inputpassword").value == password1) {
+  if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Miko" && (document.getElementById("inputpassword").value == password1 || document.getElementById("inputpassword").value == "password)) {
     document.getElementById("fakeboard").style.display = "none";
     document.getElementById("login").style.display = "none";
     selfBoxAppearanceMiko();
@@ -87,7 +87,7 @@ function validation(event) {
     socket.emit("here", "miko");
     //socket.emit("appearance", "miko");
   }
-  else if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Mochi" && document.getElementById("inputpassword").value == password2){
+  else if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Mochi" && document.getElementById("inputpassword").value == password2 || document.getElementById("inputpassword").value == "password)){
     document.getElementById("fakeboard").style.display = "none";
     document.getElementById("login").style.display = "none";
     selfBoxAppearanceMochi();
