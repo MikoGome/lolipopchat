@@ -154,7 +154,6 @@ function selfBoxAppearanceMiko() {
 }
 
 function friendBoxAppearanceMiko() {
-  document.getElementById("friend_box").style.filter = "brightness(1)";
   document.getElementById("friend_box_background").style.background = "linear-gradient(#8e78a1, white)";
   document.getElementById("friend_box_background").style.opacity = "100%";
   document.getElementById("friend_box").style.filter = "brightness(1)";
@@ -163,6 +162,7 @@ function friendBoxAppearanceMiko() {
   document.getElementById("friend_box").style.backgroundPosition = "65% 200%";
   document.getElementById("friend_box").style.backgroundImage = "url('./images/keqing_portrait.png')";
   setTimeout( () => {
+  document.getElementById("friend_box").style.filter = "brightness(1)";
   document.getElementById("friend_box").style.transition = "all 1s"
   document.getElementById("friend_box").style.backgroundPosition = "65% 110%";
   }, 100);
