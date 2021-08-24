@@ -191,7 +191,7 @@ function friendBoxAppearanceMochi() {
   document.getElementById("friend_box_background").style.opacity = "100%";
   document.getElementById("friend_box").style.filter = "brightness(1)";
   document.getElementById("friend_box").style.transition = "none";
-  document.getElementById("friend_box").style.backgroundSize = "52.0833333";
+  document.getElementById("friend_box").style.backgroundSize = "52.0833333vw";
   document.getElementById("friend_box").style.backgroundPosition = "55% 200%";
   document.getElementById("friend_box").style.backgroundImage = "url('./images/ganyu_portrait.png')";
   setTimeout( () => {
