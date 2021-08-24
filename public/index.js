@@ -156,13 +156,12 @@ function selfBoxAppearanceMiko() {
 function friendBoxAppearanceMiko() {
   document.getElementById("friend_box_background").style.background = "linear-gradient(#8e78a1, white)";
   document.getElementById("friend_box_background").style.opacity = "100%";
-  if (status === 'visible') {document.getElementById("friend_box").style.filter = "brightness(1)";}
+  document.getElementById("friend_box").style.filter = "brightness(1)";
   document.getElementById("friend_box").style.transition = "none";
   document.getElementById("friend_box").style.backgroundSize = "1000px";
   document.getElementById("friend_box").style.backgroundPosition = "65% 200%";
   document.getElementById("friend_box").style.backgroundImage = "url('./images/keqing_portrait.png')";
   setTimeout( () => {
-  document.getElementById("friend_box").style.filter = "brightness(1)";
   document.getElementById("friend_box").style.transition = "all 1s"
   document.getElementById("friend_box").style.backgroundPosition = "65% 110%";
   }, 100);
@@ -189,13 +188,12 @@ function selfBoxAppearanceMochi() {
 function friendBoxAppearanceMochi() {
   document.getElementById("friend_box_background").style.background = "linear-gradient(#a2b8e6, white)";
   document.getElementById("friend_box_background").style.opacity = "100%";
-  if (status === 'visible') {document.getElementById("friend_box").style.filter = "brightness(1)";}
+  document.getElementById("friend_box").style.filter = "brightness(1)";
   document.getElementById("friend_box").style.transition = "none";
   document.getElementById("friend_box").style.backgroundSize = "1000px";
   document.getElementById("friend_box").style.backgroundPosition = "55% 200%";
   document.getElementById("friend_box").style.backgroundImage = "url('./images/ganyu_portrait.png')";
   setTimeout( () => {
-  document.getElementById("friend_box").style.filter = "brightness(1)";
   document.getElementById("friend_box").style.transition = "all 1s"
   document.getElementById("friend_box").style.backgroundPosition = "55% 110%";
   }, 100);
