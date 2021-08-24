@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
 
+@media (max-width: 750px) {
+ #header1 {
+   display: none;
+  }
+ #header2 {
+   displaye: none;
+ }
+}
+
 *{
   padding: 0;
   margin: 0;
