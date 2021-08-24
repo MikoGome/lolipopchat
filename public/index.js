@@ -187,7 +187,6 @@ function selfBoxAppearanceMochi() {
 }
 
 function friendBoxAppearanceMochi() {
-  document.getElementById("friend_box").style.filter = "brightness(1)";
   document.getElementById("friend_box_background").style.background = "linear-gradient(#a2b8e6, white)";
   document.getElementById("friend_box_background").style.opacity = "100%";
   document.getElementById("friend_box").style.filter = "brightness(1)";
@@ -196,6 +195,7 @@ function friendBoxAppearanceMochi() {
   document.getElementById("friend_box").style.backgroundPosition = "55% 200%";
   document.getElementById("friend_box").style.backgroundImage = "url('./images/ganyu_portrait.png')";
   setTimeout( () => {
+  document.getElementById("friend_box").style.filter = "brightness(1)";
   document.getElementById("friend_box").style.transition = "all 1s"
   document.getElementById("friend_box").style.backgroundPosition = "55% 110%";
   }, 100);
@@ -217,6 +217,7 @@ document.getElementById("message_write_box").addEventListener("keypress", (event
     document.getElementById("self_bubble").style.opacity = "0";
   }, 1000);
   type = setTimeout( () => {
+    document.getElementById("friend_box").style.filter = "brightness(1)";
     document.getElementById("self_box").style.transition = "all 2s ease-out";
     document.getElementById("self_box").style.backgroundPositionY = "110%";
   }, 1500);
