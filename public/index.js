@@ -162,6 +162,7 @@ function friendBoxAppearanceMiko() {
   document.getElementById("friend_box").style.backgroundPosition = "65% 200%";
   document.getElementById("friend_box").style.backgroundImage = "url('./images/keqing_portrait.png')";
   setTimeout( () => {
+  document.getElementById("friend_box").style.filter = "brightness(1)";
   document.getElementById("friend_box").style.transition = "all 1s"
   document.getElementById("friend_box").style.backgroundPosition = "65% 110%";
   }, 100);
@@ -194,6 +195,7 @@ function friendBoxAppearanceMochi() {
   document.getElementById("friend_box").style.backgroundPosition = "55% 200%";
   document.getElementById("friend_box").style.backgroundImage = "url('./images/ganyu_portrait.png')";
   setTimeout( () => {
+  document.getElementById("friend_box").style.filter = "brightness(1)";
   document.getElementById("friend_box").style.transition = "all 1s"
   document.getElementById("friend_box").style.backgroundPosition = "55% 110%";
   }, 100);
