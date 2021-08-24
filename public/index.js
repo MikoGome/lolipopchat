@@ -140,7 +140,7 @@ function selfBoxAppearanceMiko() {
   document.getElementById("self_box_background").style.background = "linear-gradient(#8e78a1, white)";
   document.getElementById("self_box_background").style.opacity = "100%";
   document.getElementById("self_box").style.transition = "none";
-  document.getElementById("self_box").style.backgroundSize = "1000px";
+  document.getElementById("self_box").style.backgroundSize = "0.520833333vw";
   document.getElementById("self_box").style.backgroundPosition = "65% 200%";
   document.getElementById("self_box").style.backgroundImage = "url('./images/keqing_portrait.png')";
   setTimeout( () => {
@@ -158,7 +158,7 @@ function friendBoxAppearanceMiko() {
   document.getElementById("friend_box_background").style.opacity = "100%";
   document.getElementById("friend_box").style.filter = "brightness(1)";
   document.getElementById("friend_box").style.transition = "none";
-  document.getElementById("friend_box").style.backgroundSize = "1000px";
+  document.getElementById("friend_box").style.backgroundSize = "0.520833333vw";
   document.getElementById("friend_box").style.backgroundPosition = "65% 200%";
   document.getElementById("friend_box").style.backgroundImage = "url('./images/keqing_portrait.png')";
   setTimeout( () => {
@@ -173,7 +173,7 @@ function selfBoxAppearanceMochi() {
   document.getElementById("self_box_background").style.background = "linear-gradient(#a2b8e6, white)";
   document.getElementById("self_box_background").style.opacity = "100%";
   document.getElementById("self_box").style.transition = "none";
-  document.getElementById("self_box").style.backgroundSize = "1000px";
+  document.getElementById("self_box").style.backgroundSize = "0.520833333vw";
   document.getElementById("self_box").style.backgroundPosition = "55% 200%";
   document.getElementById("self_box").style.backgroundImage = "url('./images/ganyu_portrait.png')";
   setTimeout( () => {
@@ -191,7 +191,7 @@ function friendBoxAppearanceMochi() {
   document.getElementById("friend_box_background").style.opacity = "100%";
   document.getElementById("friend_box").style.filter = "brightness(1)";
   document.getElementById("friend_box").style.transition = "none";
-  document.getElementById("friend_box").style.backgroundSize = "1000px";
+  document.getElementById("friend_box").style.backgroundSize = "0.520833333vw";
   document.getElementById("friend_box").style.backgroundPosition = "55% 200%";
   document.getElementById("friend_box").style.backgroundImage = "url('./images/ganyu_portrait.png')";
   setTimeout( () => {
