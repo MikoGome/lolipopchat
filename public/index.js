@@ -157,6 +157,7 @@ function friendBoxAppearanceMiko() {
   document.getElementById("friend_box").style.filter = "brightness(1)";
   document.getElementById("friend_box_background").style.background = "linear-gradient(#8e78a1, white)";
   document.getElementById("friend_box_background").style.opacity = "100%";
+  document.getElementById("friend_box").style.filter = "brightness(1)";
   document.getElementById("friend_box").style.transition = "none";
   document.getElementById("friend_box").style.backgroundSize = "1000px";
   document.getElementById("friend_box").style.backgroundPosition = "65% 200%";
@@ -189,6 +190,7 @@ function friendBoxAppearanceMochi() {
   document.getElementById("friend_box").style.filter = "brightness(1)";
   document.getElementById("friend_box_background").style.background = "linear-gradient(#a2b8e6, white)";
   document.getElementById("friend_box_background").style.opacity = "100%";
+  document.getElementById("friend_box").style.filter = "brightness(1)";
   document.getElementById("friend_box").style.transition = "none";
   document.getElementById("friend_box").style.backgroundSize = "1000px";
   document.getElementById("friend_box").style.backgroundPosition = "55% 200%";
