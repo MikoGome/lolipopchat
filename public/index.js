@@ -259,7 +259,7 @@ socket.on("away", status => {
     document.getElementById("friend_box").style.transition = "all 1s";
     document.getElementById("friend_box").style.filter = "brightness(0.5)";
     document.getElementById("friend_box").style.backgroundPositionY = "120%";
-  }, 2000);
+  }, 3000);
   }
 });
 
