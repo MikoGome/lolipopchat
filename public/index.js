@@ -153,6 +153,14 @@ for(let i = 0; i < 12; i++){
   voicesMochi.push(voiceMochi);
 }
 
+function mikoVoice () {
+  voicesMiko[Math.floor(Math.random()*12)].play();
+}
+
+function mochiVoice () {
+  voicesMochi[Math.floor(Math.random()*12)].play();
+}
+
 function selfBoxAppearanceMiko() {
   document.getElementById("self_box_background").style.background = "linear-gradient(#8e78a1, white)";
   document.getElementById("self_box_background").style.opacity = "100%";
@@ -163,9 +171,7 @@ function selfBoxAppearanceMiko() {
   setTimeout( () => {
     document.getElementById("self_box").style.transition = "all 1s";
     document.getElementById("self_box").style.backgroundPosition = "65% 110%";
-    document.getElementById("self_box").addEventListener("click", () => {
-    voicesMiko[Math.floor(Math.random()*12)].play();
-    });
+    document.getElementById("self_box").addEventListener("click", mikoVoice);
   }, 100);
   setInterval( () => {
     socket.emit("mikoIsOnline");
@@ -185,9 +191,7 @@ function friendBoxAppearanceMiko() {
     document.getElementById("friend_box").style.filter = "brightness(1)";
     document.getElementById("friend_box").style.transition = "all 1s"
     document.getElementById("friend_box").style.backgroundPosition = "65% 110%";
-    document.getElementById("friend_box").addEventListener("click", () => {
-    voicesMiko[Math.floor(Math.random()*12)].play();
-    });
+    document.getElementById("friend_box").addEventListener("click", mikoVoice);
   }, 100);
   mikoon = false;
 }
@@ -202,9 +206,7 @@ function selfBoxAppearanceMochi() {
   setTimeout( () => {
     document.getElementById("self_box").style.transition = "all 1s"
     document.getElementById("self_box").style.backgroundPosition = "55% 110%";
-    document.getElementById("self_box").addEventListener("click", () => {
-    voicesMochi[Math.floor(Math.random()*12)].play();
-    });
+    document.getElementById("self_box").addEventListener("click", mochiVoice);
   }, 100);
   setInterval( () => {
     socket.emit("mochiIsOnline");
@@ -224,9 +226,7 @@ function friendBoxAppearanceMochi() {
     document.getElementById("friend_box").style.filter = "brightness(1)";
     document.getElementById("friend_box").style.transition = "all 1s"
     document.getElementById("friend_box").style.backgroundPosition = "55% 110%";
-    document.getElementById("friend_box").addEventListener("click", () => {
-    voicesMochi[Math.floor(Math.random()*12)].play();
-    });
+    document.getElementById("friend_box").addEventListener("click", mochiVoice);
   }, 100);
   mochion = false;
 }
@@ -304,6 +304,9 @@ socket.on("away", status => {
 socket.on("logout", () => {
   document.getElementById("friend_box_background").style.opacity = "0";
   document.getElementById("friend_box_background").style.removeProperty("background");
+  document.getElementById("friend_box").removeEventListener("click", mikoVoice);
+  document.getElementById("friend_box").removeEventListener("click", mochiVoice);
+
 });
 
 const shiina = document.getElementById("shiina");
