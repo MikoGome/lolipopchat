@@ -269,7 +269,7 @@ socket.on("typing", () => {
     document.getElementById("friend_bubble").style.opacity = "0";
 }, 1000);
   type2 = setTimeout( () => {
-    document.getElementById("friend_box").style.transition = "all 10s ease-out";
+    document.getElementById("friend_box").style.transition = "all 2s ease-out";
     document.getElementById("friend_box").style.backgroundPositionY = "110%";
   }, 1500);
 });
@@ -282,7 +282,7 @@ socket.on("typing", () => {
 socket.on("away", status => {
   if (status === 'visible') {
     //clearTimeout(away1);
-    document.getElementById("friend_box").style.transition = "all 1s";
+    //document.getElementById("friend_box").style.transition = "all 1s";
     document.getElementById("friend_box").style.filter = "brightness(1)";
     document.getElementById("friend_box").style.backgroundPositionY = "110%";
   }
