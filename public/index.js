@@ -271,7 +271,7 @@ socket.on("typing", () => {
   type2 = setTimeout( () => {
     document.getElementById("friend_box").style.transition = "all 2s ease-out";
     document.getElementById("friend_box").style.backgroundPositionY = "110%";
-  }, 1500);
+  }, 2500);
 });
 
 /*document.addEventListener("visibilitychange", () => {
