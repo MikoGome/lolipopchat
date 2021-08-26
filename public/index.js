@@ -269,7 +269,7 @@ socket.on("typing", () => {
     document.getElementById("friend_bubble").style.opacity = "0";
 }, 1000);
   type2 = setTimeout( () => {
-    document.getElementById("friend_box").style.transition = "all 2s ease-out";
+    document.getElementById("friend_box").style.transition = "all 3s ease-out";
     document.getElementById("friend_box").style.backgroundPositionY = "110%";
   }, 1500);
 });
