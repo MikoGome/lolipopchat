@@ -259,7 +259,7 @@ document.getElementById("message_write_box").addEventListener("keypress", (event
 
 let typeo;
 socket.on("typing", () => {
-  clearTimeout(type2);
+  clearTimeout(typeo);
   document.getElementById("friend_bubble").style.transition = "all 0.25s linear";
   document.getElementById("friend_bubble").style.opacity = "1";
   document.getElementById("friend_box").style.transition = "all 0.25s linear";
