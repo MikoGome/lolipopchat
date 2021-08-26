@@ -141,6 +141,7 @@ let voicesMiko = [];
 for(let i = 0; i < 12; i++){
   let voiceMiko = new Audio();
   voiceMiko.src = `./keqing_voice/${i}.ogg`;
+  voiceMiko.volume = 0.15;
   voicesMiko.push(voiceMiko);
 }
 
@@ -150,6 +151,7 @@ let voicesMochi = [];
 for(let i = 0; i < 12; i++){
   const voiceMochi = new Audio();
   voiceMochi.src = `./ganyu_voice/${i}.ogg`;
+  voiceMochi.volume = 0.15;
   voicesMochi.push(voiceMochi);
 }
 
