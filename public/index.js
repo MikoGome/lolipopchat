@@ -257,7 +257,7 @@ document.getElementById("message_write_box").addEventListener("keypress", (event
   clearTimeout(type);
 });*/
 
-let type2;
+let typeo;
 socket.on("typing", () => {
   clearTimeout(type2);
   document.getElementById("friend_bubble").style.transition = "all 0.25s linear";
@@ -268,7 +268,7 @@ socket.on("typing", () => {
     document.getElementById("friend_bubble").style.transition = "all 3s ease-in";
     document.getElementById("friend_bubble").style.opacity = "0";
   }, 1000);
-  type2 = setTimeout( () => {
+  typeo = setTimeout( () => {
     document.getElementById("friend_box").style.transition = "all 2s ease-out";
     document.getElementById("friend_box").style.backgroundPositionY = "110%";
   }, 1500);
