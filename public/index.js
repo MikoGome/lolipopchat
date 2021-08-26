@@ -136,6 +136,23 @@ socket.on ("here", person => {
   }
 });
 
+let voicesMiko = [];
+
+for(let i = 0; i < 12; i++){
+  let voiceMiko = new Audio();
+  voiceMiko.src = `./keqing_voice/${i}.ogg`;
+  voicesMiko.push(voiceMiko);
+}
+
+
+let voicesMochi = [];
+
+for(let i = 0; i < 12; i++){
+  const voiceMochi = new Audio();
+  voiceMochi.src = `./ganyu_voice/${i}.ogg`;
+  voicesMochi.push(voiceMochi);
+}
+
 function selfBoxAppearanceMiko() {
   document.getElementById("self_box_background").style.background = "linear-gradient(#8e78a1, white)";
   document.getElementById("self_box_background").style.opacity = "100%";
@@ -144,8 +161,11 @@ function selfBoxAppearanceMiko() {
   document.getElementById("self_box").style.backgroundPosition = "65% 200%";
   document.getElementById("self_box").style.backgroundImage = "url('./images/keqing_portrait.png')";
   setTimeout( () => {
-  document.getElementById("self_box").style.transition = "all 1s";
-  document.getElementById("self_box").style.backgroundPosition = "65% 110%";
+    document.getElementById("self_box").style.transition = "all 1s";
+    document.getElementById("self_box").style.backgroundPosition = "65% 110%";
+    document.getElementById("self_box").addEventListener("click", () => {
+    voicesMiko[Math.floor(Math.random()*12)].play();
+    });
   }, 100);
   setInterval( () => {
     socket.emit("mikoIsOnline");
@@ -162,9 +182,12 @@ function friendBoxAppearanceMiko() {
   document.getElementById("friend_box").style.backgroundPosition = "65% 200%";
   document.getElementById("friend_box").style.backgroundImage = "url('./images/keqing_portrait.png')";
   setTimeout( () => {
-  document.getElementById("friend_box").style.filter = "brightness(1)";
-  document.getElementById("friend_box").style.transition = "all 1s"
-  document.getElementById("friend_box").style.backgroundPosition = "65% 110%";
+    document.getElementById("friend_box").style.filter = "brightness(1)";
+    document.getElementById("friend_box").style.transition = "all 1s"
+    document.getElementById("friend_box").style.backgroundPosition = "65% 110%";
+    document.getElementById("friend_box").addEventListener("click", () => {
+    voicesMiko[Math.floor(Math.random()*12)].play();
+    });
   }, 100);
   mikoon = false;
 }
@@ -177,8 +200,11 @@ function selfBoxAppearanceMochi() {
   document.getElementById("self_box").style.backgroundPosition = "55% 200%";
   document.getElementById("self_box").style.backgroundImage = "url('./images/ganyu_portrait.png')";
   setTimeout( () => {
-  document.getElementById("self_box").style.transition = "all 1s"
-  document.getElementById("self_box").style.backgroundPosition = "55% 110%";
+    document.getElementById("self_box").style.transition = "all 1s"
+    document.getElementById("self_box").style.backgroundPosition = "55% 110%";
+    document.getElementById("self_box").addEventListener("click", () => {
+    voicesMochi[Math.floor(Math.random()*12)].play();
+    });
   }, 100);
   setInterval( () => {
     socket.emit("mochiIsOnline");
@@ -195,9 +221,12 @@ function friendBoxAppearanceMochi() {
   document.getElementById("friend_box").style.backgroundPosition = "55% 200%";
   document.getElementById("friend_box").style.backgroundImage = "url('./images/ganyu_portrait.png')";
   setTimeout( () => {
-  document.getElementById("friend_box").style.filter = "brightness(1)";
-  document.getElementById("friend_box").style.transition = "all 1s"
-  document.getElementById("friend_box").style.backgroundPosition = "55% 110%";
+    document.getElementById("friend_box").style.filter = "brightness(1)";
+    document.getElementById("friend_box").style.transition = "all 1s"
+    document.getElementById("friend_box").style.backgroundPosition = "55% 110%";
+    document.getElementById("friend_box").addEventListener("click", () => {
+    voicesMochi[Math.floor(Math.random()*12)].play();
+    });
   }, 100);
   mochion = false;
 }
