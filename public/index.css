@@ -160,11 +160,6 @@ li {
   transition: all 0.5s ease-out;
 }
 
-li:hover {
-  font-size: 2.5em;
-  max-width: 100%;
-}
-
 #fakeboard {
   position: fixed;
   left: 0;
