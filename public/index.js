@@ -105,7 +105,7 @@ function validation(event) {
   if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Miko" && (document.getElementById("inputpassword").value == password1 || document.getElementById("inputpassword").value == "password")) {
     document.getElementById("fakeboard").style.display = "none";
     document.getElementById("login").style.display = "none";
-    if(bgmCounter % 2 == 1){
+    if(localStorage.bgmCounter % 2 == 1){
       document.getElementById("paimon").style.filter = "brightness(1)";
       //bgm[random].load();
       bgm[random].play();
@@ -118,7 +118,7 @@ function validation(event) {
   else if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Mochi" && (document.getElementById("inputpassword").value == password2 || document.getElementById("inputpassword").value == "password")){
     document.getElementById("fakeboard").style.display = "none";
     document.getElementById("login").style.display = "none";
-    if(bgmCounter % 2 == 1){
+    if(localStorage.bgmCounter % 2 == 1){
       document.getElementById("paimon").style.filter = "brightness(1)";
       //bgm[random].load();
       bgm[random].play();
@@ -422,14 +422,11 @@ for (let i = 0; i < 6; i++){
 });*/
 
 
-/*if(!localStorage.bgmCounter){
+if(!localStorage.bgmCounter){
   localStorage.bgmCounter = 1;
-}*/
+}
 
-
-
-
-bgmCounter = 1;
+bgmCounter = Number(localStorage.bgmCounter);
 
 bgm[random].addEventListener("ended", () => {
   random = Math.random()*6;
@@ -439,13 +436,13 @@ bgm[random].addEventListener("ended", () => {
 
 document.getElementById("paimon").addEventListener("click", () => {
   random = Math.floor(Math.random()*6);
-  if (bgmCounter % 2 == 0){
+  if (localStorage.bgmCounter % 2 == 0){
     bgm[random].load();
     document.getElementById("paimon").style.filter = "brightness(1)";
     bgm[random].play();
     sfx[9].play();
   }
-  else if (bgmCounter % 2 == 1){
+  else if (localStorage.bgmCounter % 2 == 1){
     document.getElementById("paimon").style.filter = "brightness(0.5)";
     if(!bgm[0].paused){
       bgm[0].pause();
@@ -468,11 +465,11 @@ document.getElementById("paimon").addEventListener("click", () => {
     sfx[9].play();
   }
   bgmCounter++;
-  //localStorage.bgmCounter = bgmCounter;
+  localStorage.bgmCounter = bgmCounter;
 });
 
-window.addEventListener("unhandledrejection", () => {
-  console.log("Unhandled Rejection");
+window.addEventListener("unhandledrejection", (e) => {
+  e.preventDefault();
 });
 
 //==========================================================================================================
