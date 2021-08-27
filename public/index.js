@@ -426,12 +426,8 @@ for (let i = 0; i < 6; i++){
   localStorage.bgmCounter = 1;
 }*/
 
-bgm[0].load();
-bgm[1].load();
-bgm[2].load();
-bgm[3].load();
-bgm[4].load();
-bgm[5].load();
+
+
 
 bgmCounter = 1;
 
@@ -440,6 +436,8 @@ bgm[random].addEventListener("ended", () => {
   //bgm[random].load();
   bgm[random].play();
 });
+
+bgm[random].load();
 
 document.getElementById("paimon").addEventListener("click", () => {
   random = Math.floor(Math.random()*6);
