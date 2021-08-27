@@ -2,6 +2,7 @@ const socket = io.connect();
 
 let my_message;
 let soundCheck = false;
+let random = Math.floor(Math.random()*6);
 
 const sfx = [];
 
@@ -107,8 +108,8 @@ function validation(event) {
     document.getElementById("login").style.display = "none";
     if(localStorage.bgmCounter % 2 == 1){
       document.getElementById("paimon").style.filter = "brightness(1)";
-      bgm[Math.floor(Math.random()*6)].load();
-      bgm[Math.floor(Math.random()*6)].play();
+      bgm[random].load();
+      bgm[random].play();
     }
     selfBoxAppearanceMiko();
     document.getElementById("message_write_box").focus();
@@ -120,8 +121,8 @@ function validation(event) {
     document.getElementById("login").style.display = "none";
     if(localStorage.bgmCounter % 2 == 1){
       document.getElementById("paimon").style.filter = "brightness(1)";
-      bgm[Math.floor(Math.random()*6)].load();
-      bgm[Math.floor(Math.random()*6)].play();
+      bgm[random].load();
+      bgm[random].play();
     }
     selfBoxAppearanceMochi();
     document.getElementById("message_write_box").focus();
@@ -428,8 +429,13 @@ if(!localStorage.bgmCounter){
 
 bgmCounter = Number(localStorage.bgmCounter);
 
+bgm[random].addEventListener("ended", () => {
+  random = Math.random()*6;
+  bgm[random].load();
+  bgm[random].play();
+});
+
 document.getElementById("paimon").addEventListener("click", () => {
-  let random = Math.floor(Math.random()*6);
   if (localStorage.bgmCounter % 2 == 0){
     bgm[random].load();
     document.getElementById("paimon").style.filter = "brightness(1)";
