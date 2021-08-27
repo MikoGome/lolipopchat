@@ -184,7 +184,7 @@ for(let i = 0; i < 12; i++){
   voicesMochi.push(voiceMochi);
 }
 
-randomSave = Math.floor(Math.random()*12);
+let randomSave = Math.floor(Math.random()*12);
 function mikoVoice () {
   voicesMiko[randomSave].pause();
   randomSave = Math.floor(Math.random()*12)
@@ -193,7 +193,7 @@ function mikoVoice () {
 
 }
 
-randomSave2 = Math.floor(Math.random()*12);
+let randomSave2 = Math.floor(Math.random()*12);
 function mochiVoice () {
   voicesMochi[randomSave2].pause();
   randomSave = Math.floor(Math.random()*12)
