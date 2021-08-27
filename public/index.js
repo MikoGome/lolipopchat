@@ -107,7 +107,7 @@ function validation(event) {
     document.getElementById("login").style.display = "none";
     if(localStorage.bgmCounter % 2 == 1){
       document.getElementById("paimon").style.filter = "brightness(1)";
-      //bgm[random].load();
+      bgm[random].load();
       bgm[random].play();
     }
     selfBoxAppearanceMiko();
@@ -438,7 +438,7 @@ bgm[random].addEventListener("ended", () => {
 document.getElementById("paimon").addEventListener("click", () => {
   random = Math.floor(Math.random()*6);
   if (localStorage.bgmCounter % 2 == 0){
-    //bgm[random].load();
+    bgm[random].load();
     document.getElementById("paimon").style.filter = "brightness(1)";
     bgm[random].play();
     sfx[9].play();
