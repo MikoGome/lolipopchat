@@ -16,6 +16,7 @@ function messageSend () {
   my_message = document.getElementById("message_write_box").value;
   socket.emit("chat", document.getElementById("message_write_box").value);
   document.getElementById("message_write_box").value = "";
+  document.getElementById("message_write_box").focus();
   soundCheck = true;
 }
 
