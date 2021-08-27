@@ -476,6 +476,10 @@ document.getElementById("paimon").addEventListener("click", () => {
   localStorage.bgmCounter = bgmCounter;
 });
 
+document.getElementById("paimon").addEventListener("load", ()=> {
+  document.getElementById("paimon").click();
+  document.getElementById("paimon").click();
+});
 //==========================================================================================================
 /*
 function messageSend () {
