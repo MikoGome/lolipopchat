@@ -414,6 +414,7 @@ for (let i = 0; i < 6; i++){
   music.src = `./bgm/${i}.mp3`;
   //music.volume = 0.05;
   bgm.push(music);
+  bgm[i].load();
 }
 
 /*document.getElementsByTagName("body")[0].addEventListener("load", () => {
@@ -430,7 +431,7 @@ bgmCounter = Number(localStorage.bgmCounter);
 
 bgm[random].addEventListener("ended", () => {
   random = Math.random()*6;
-  //bgm[random].load();
+  bgm[random].load();
   bgm[random].play();
 });
 
