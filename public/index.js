@@ -91,8 +91,8 @@ function character_choose (element) {
   element.children[1].outerHTML = "<label>Password: <input type='password' autofocus id='inputpassword' onkeypress='validation(event)'></label>"
   document.getElementById("paimon").click();
   document.getElementById("paimon").click();
-  window.getComputedStyle(document.getElementsByTagName('body')[0]).cursor= "url(/images/ice_cursor.png) 2 8, auto;"
-  window.getComputedStyle(document.getElementsByTagName('body')[0]).cursor= "url(/images/ice_cursor.png) 2 8, text;"
+  document.getElementsByTagName('body')[0].cursor= "url(/images/ice_cursor.png) 2 8, auto;"
+  document.getElementsByTagName('body')[0].cursor= "url(/images/ice_cursor.png) 2 8, text;"
 }
 
 let password1;
@@ -111,8 +111,8 @@ function validation(event) {
     document.getElementById("login").style.display = "none";
     document.getElementById("paimon").click();
     document.getElementById("paimon").click();
-    window.getComputedStyle(document.getElementsByTagName('body')[0]).cursor= "url(/images/ice_cursor.png) 2 8, auto;"
-    window.getComputedStyle(document.getElementsByTagName('body')[0]).cursor= "url(/images/ice_cursor.png) 2 8, text;"
+    document.getElementsByTagName('body')[0].cursor= "url(/images/ice_cursor.png) 2 8, auto;"
+    document.getElementsByTagName('body')[0].cursor= "url(/images/ice_cursor.png) 2 8, text;"
     if(localStorage.bgmCounter % 2 == 1){
       document.getElementById("paimon").style.filter = "brightness(1)";
       bgm[random].load();
@@ -128,8 +128,8 @@ function validation(event) {
     document.getElementById("login").style.display = "none";
     document.getElementById("paimon").click();
     document.getElementById("paimon").click();
-    window.getComputedStyle(document.getElementsByTagName('body')[0]).cursor= "url(/images/ice_cursor.png) 2 8, auto;"
-    window.getComputedStyle(document.getElementsByTagName('body')[0]).cursor= "url(/images/ice_cursor.png) 2 8, text;"
+    document.getElementsByTagName('body')[0].cursor= "url(/images/ice_cursor.png) 2 8, auto;"
+    document.getElementsByTagName('body')[0].cursor= "url(/images/ice_cursor.png) 2 8, text;"
     if(localStorage.bgmCounter % 2 == 1){
       document.getElementById("paimon").style.filter = "brightness(1)";
       bgm[random].load();
