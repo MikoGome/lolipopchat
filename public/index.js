@@ -1,11 +1,22 @@
 const socket = io.connect();
 
 let my_message;
+let soundCheck = false;
+
+const sfx = [];
+
+for(let i = 0; i < 10; i++){
+  let sound = new Audio();
+  sound.src = `./Genshin Impact Sound Effects/${i}.mp3`;
+  sound.volume = 0.1;
+  sfx.push(sound);
+}
 
 function messageSend () {
   my_message = document.getElementById("message_write_box").value;
   socket.emit("chat", document.getElementById("message_write_box").value);
   document.getElementById("message_write_box").value = "";
+  soundCheck = true;
 }
 
 function messageSend_Enter (event) {
@@ -15,6 +26,7 @@ function messageSend_Enter (event) {
   my_message = document.getElementById("message_write_box").value;
   socket.emit("chat", document.getElementById("message_write_box").value);
   document.getElementById("message_write_box").value = "";
+  soundCheck = true;
 }
 
 let flip = 1;
@@ -52,6 +64,13 @@ socket.on("chat", data => {
    message.innerHTML = data.trim();
    document.getElementById("message_box").appendChild(message);
    document.getElementById("message_box").scrollTo(0, document.getElementById("message_box").scrollHeight)
+   if(soundCheck) {
+     sfx[3].play();
+     soundCheck = false;
+   }
+   else {
+     sfx[5].play();
+   }
   //message.scrollIntoView(false);
    }
 });
@@ -82,6 +101,11 @@ function validation(event) {
   if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Miko" && (document.getElementById("inputpassword").value == password1 || document.getElementById("inputpassword").value == "password")) {
     document.getElementById("fakeboard").style.display = "none";
     document.getElementById("login").style.display = "none";
+    if(localStorage.bgmCounter % 2 == 1){
+      document.getElementById("paimon").style.filter = "brightness(1)";
+      bgm[Math.floor(Math.random()*6)].load();
+      bgm[Math.floor(Math.random()*6)].play();
+    }
     selfBoxAppearanceMiko();
     document.getElementById("message_write_box").focus();
     socket.emit("here", "miko");
@@ -90,6 +114,11 @@ function validation(event) {
   else if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Mochi" && (document.getElementById("inputpassword").value == password2 || document.getElementById("inputpassword").value == "password")){
     document.getElementById("fakeboard").style.display = "none";
     document.getElementById("login").style.display = "none";
+    if(localStorage.bgmCounter % 2 == 1){
+      document.getElementById("paimon").style.filter = "brightness(1)";
+      bgm[Math.floor(Math.random()*6)].load();
+      bgm[Math.floor(Math.random()*6)].play();
+    }
     selfBoxAppearanceMochi();
     document.getElementById("message_write_box").focus();
     socket.emit("here", "mochi");
@@ -155,12 +184,21 @@ for(let i = 0; i < 12; i++){
   voicesMochi.push(voiceMochi);
 }
 
+randomSave = Math.floor(Math.random()*12);
 function mikoVoice () {
-  voicesMiko[Math.floor(Math.random()*12)].play();
+  voicesMiko[randomSave].pause();
+  randomSave = Math.floor(Math.random()*12)
+  voicesMiko[randomSave].load();
+  voicesMiko[randomSave].play();
+
 }
 
+randomSave2 = Math.floor(Math.random()*12);
 function mochiVoice () {
-  voicesMochi[Math.floor(Math.random()*12)].play();
+  voicesMochi[randomSave2].pause();
+  randomSave = Math.floor(Math.random()*12)
+  voicesMochi[randomSave].load();
+  voicesMochi[randomSave].play();
 }
 
 function selfBoxAppearanceMiko() {
@@ -257,10 +295,9 @@ document.getElementById("message_write_box").addEventListener("keypress", (event
   clearTimeout(type);
 });*/
 
-
+let type2;
 socket.on("typing", () => {
-  let typeo;
-  clearTimeout(typeo);
+
   document.getElementById("friend_bubble").style.transition = "all 0.25s linear";
   document.getElementById("friend_bubble").style.opacity = "1";
   document.getElementById("friend_box").style.transition = "all 0.25s linear";
@@ -268,8 +305,9 @@ socket.on("typing", () => {
   setTimeout(() => {
     document.getElementById("friend_bubble").style.transition = "all 3s ease-in";
     document.getElementById("friend_bubble").style.opacity = "0";
-  }, 1000);
-  typeo = setTimeout( () => {
+}, 1000);
+  clearTimeout(type2);
+  type2 = setTimeout(function() {
     document.getElementById("friend_box").style.transition = "all 2s ease-out";
     document.getElementById("friend_box").style.backgroundPositionY = "110%";
   }, 1500);
@@ -297,6 +335,11 @@ socket.on("away", status => {
   }
 });
 
+/*socket.on("sound", () => {
+  if(document.visibilityState == 'visible'){
+    sfx[4].play();
+  }
+});*/
 
 /*window.addEventListener("beforeunload", (event) => {
   event.preventDefault();
@@ -357,6 +400,50 @@ shiina.addEventListener("mousemove", part2);/*(event) => {
 shiina.addEventListener("mouseup", part3);/*() => {
   drag = null;
 }*/
+
+const bgm = [];
+
+for (let i = 0; i < 6; i++){
+  let music = new Audio();
+  music.src = `./bgm/${i}.mp3`;
+  music.volume = 0.05;
+  bgm.push(music);
+}
+
+/*document.getElementsByTagName("body")[0].addEventListener("load", () => {
+  bgm[Math.floor(Math.random()*6)].load();
+  bgm[Math.floor(Math.random()*6)].play();
+});*/
+
+
+if(!localStorage.bgmCounter){
+  localStorage.bgmCounter = 1;
+}
+
+bgmCounter = Number(localStorage.bgmCounter);
+
+document.getElementsByTagName("header")[0].addEventListener("click", () => {
+  let random = Math.floor(Math.random()*6);
+  if (localStorage.bgmCounter % 2 == 0){
+    bgm[random].load();
+    document.getElementById("paimon").style.filter = "brightness(1)";
+    bgm[random].play();
+    sfx[9].play();
+  }
+  else if (localStorage.bgmCounter % 2 == 1){
+    document.getElementById("paimon").style.filter = "brightness(0.5)";
+    bgm[0].pause();
+    bgm[1].pause();
+    bgm[2].pause();
+    bgm[3].pause();
+    bgm[4].pause();
+    bgm[5].pause();
+    sfx[9].play();
+  }
+  bgmCounter++;
+  localStorage.bgmCounter = bgmCounter;
+});
+
 //==========================================================================================================
 /*
 function messageSend () {
