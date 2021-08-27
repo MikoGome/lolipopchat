@@ -111,7 +111,7 @@ function validation(event) {
     document.getElementById("paimon").click();
     if(localStorage.bgmCounter % 2 == 1){
       document.getElementById("paimon").style.filter = "brightness(1)";
-      bgm[random].load();
+      bgm[random].currentTime = 0;
       bgm[random].play();
     }
     selfBoxAppearanceMiko();
@@ -126,7 +126,7 @@ function validation(event) {
     document.getElementById("paimon").click();
     if(localStorage.bgmCounter % 2 == 1){
       document.getElementById("paimon").style.filter = "brightness(1)";
-      bgm[random].load();
+      bgm[random].currentTime = 0;
       bgm[random].play();
     }
     selfBoxAppearanceMochi();
@@ -422,7 +422,6 @@ for (let i = 0; i < 6; i++){
   music.src = `./bgm/${i}.mp3`;
   //music.volume = 0.05;
   bgm.push(music);
-  bgm[i].load();
 }
 
 /*document.getElementsByTagName("body")[0].addEventListener("load", () => {
@@ -439,14 +438,14 @@ bgmCounter = Number(localStorage.bgmCounter);
 
 bgm[random].addEventListener("ended", () => {
   random = Math.random()*6;
-  bgm[random].load();
+  bgm[random].currentTime = 0;
   bgm[random].play();
 });
 
 document.getElementById("paimon").addEventListener("click", () => {
   random = Math.floor(Math.random()*6);
   if (localStorage.bgmCounter % 2 == 0){
-    bgm[random].load();
+    bgm[random].currentTime = 0;
     document.getElementById("paimon").style.filter = "brightness(1)";
     bgm[random].play();
     sfx[9].play();
@@ -455,27 +454,27 @@ document.getElementById("paimon").addEventListener("click", () => {
     document.getElementById("paimon").style.filter = "brightness(0.5)";
     if(!bgm[0].paused){
       bgm[0].pause();
-      bgm[0].load();
+      bgm[random].currentTime = 0;
     }
     else if(!bgm[1].paused){
       bgm[1].pause();
-      bgm[1].load();
+      bgm[random].currentTime = 0;
     }
     else if(!bgm[2].paused){
       bgm[2].pause();
-      bgm[2].load();
+      bgm[random].currentTime = 0;
     }
     else if(!bgm[3].paused){
       bgm[3].pause();
-      bgm[3].load();
+      bgm[random].currentTime = 0;
     }
     else if(!bgm[4].paused){
       bgm[4].pause();
-      bgm[4].load();
+      bgm[random].currentTime = 0;
     }
     else if(!bgm[5].paused){
       bgm[5].pause();
-      bgm[5].load();
+      bgm[random].currentTime = 0;
     }
     sfx[9].play();
   }
