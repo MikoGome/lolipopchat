@@ -341,6 +341,14 @@ li {
   scrollbar-width: none;  /* Firefox */
 }
 
+.goneexample::-webkit-scrollbar-track {
+  display: none;
+}
+
+.goneexample::-webkit-scrollbar-thumb {
+  display: none;
+}
+
 #paimon {
   transition: all 0.5s;
   filter: brightness(0.5);
