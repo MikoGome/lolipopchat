@@ -479,7 +479,7 @@ document.getElementById("paimon").addEventListener("click", () => {
 setTimeout( () => {
   document.getElementById("paimon").click();
   document.getElementById("paimon").click();
-}, 200);
+}, 2000);
 
 //==========================================================================================================
 /*
