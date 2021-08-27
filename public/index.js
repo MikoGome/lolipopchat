@@ -423,7 +423,7 @@ if(!localStorage.bgmCounter){
 
 bgmCounter = Number(localStorage.bgmCounter);
 
-document.getElementsByTagName("paimon")[0].addEventListener("click", () => {
+document.getElementsById("paimon").addEventListener("click", () => {
   let random = Math.floor(Math.random()*6);
   if (localStorage.bgmCounter % 2 == 0){
     bgm[random].load();
