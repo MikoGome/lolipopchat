@@ -412,7 +412,6 @@ const bgm = [];
 for (let i = 0; i < 6; i++){
   let music = new Audio();
   music.src = `./bgm/${i}.mp3`;
-  music.load();
   //music.volume = 0.05;
   bgm.push(music);
 }
@@ -426,6 +425,13 @@ for (let i = 0; i < 6; i++){
 /*if(!localStorage.bgmCounter){
   localStorage.bgmCounter = 1;
 }*/
+
+bgm[0].load();
+bgm[1].load();
+bgm[2].load();
+bgm[3].load();
+bgm[4].load();
+bgm[5].load();
 
 bgmCounter = 1;
 
