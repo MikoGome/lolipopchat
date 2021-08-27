@@ -8,7 +8,7 @@ const sfx = [];
 for(let i = 0; i < 10; i++){
   let sound = new Audio();
   sound.src = `./Genshin Impact Sound Effects/${i}.mp3`;
-  sound.volume = 0.1;
+  //sound.volume = 0.1;
   sfx.push(sound);
 }
 
@@ -170,7 +170,7 @@ let voicesMiko = [];
 for(let i = 0; i < 12; i++){
   let voiceMiko = new Audio();
   voiceMiko.src = `./keqing_voice/${i}.ogg`;
-  voiceMiko.volume = 0.15;
+  //voiceMiko.volume = 0.15;
   voicesMiko.push(voiceMiko);
 }
 
@@ -180,7 +180,7 @@ let voicesMochi = [];
 for(let i = 0; i < 12; i++){
   const voiceMochi = new Audio();
   voiceMochi.src = `./ganyu_voice/${i}.ogg`;
-  voiceMochi.volume = 0.15;
+  //voiceMochi.volume = 0.15;
   voicesMochi.push(voiceMochi);
 }
 
@@ -406,7 +406,7 @@ const bgm = [];
 for (let i = 0; i < 6; i++){
   let music = new Audio();
   music.src = `./bgm/${i}.mp3`;
-  music.volume = 0.05;
+  //music.volume = 0.05;
   bgm.push(music);
 }
 
