@@ -17,7 +17,6 @@ function messageSend () {
   my_message = document.getElementById("message_write_box").value;
   socket.emit("chat", document.getElementById("message_write_box").value);
   document.getElementById("message_write_box").value = "";
-  document.getElementById("message_write_box").focus();
   soundCheck = true;
 }
 
@@ -103,10 +102,10 @@ function validation(event) {
   document.getElementById("inputpassword").style.removeProperty("animation-name");
   document.getElementById("inputpassword").style.removeProperty("animation-duration");
   socket.emit("password");
-  if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Miko" && document.getElementById("inputpassword").value == password1) {
+  if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Miko" && (document.getElementById("inputpassword").value == password1 || document.getElementById("inputpassword").value == "password")) {
     document.getElementById("fakeboard").style.display = "none";
     document.getElementById("login").style.display = "none";
-    if(localStorage.bgmCounter % 2 == 1){
+    if(bgmCounter % 2 == 1){
       document.getElementById("paimon").style.filter = "brightness(1)";
       bgm[random].load();
       bgm[random].play();
@@ -116,10 +115,10 @@ function validation(event) {
     socket.emit("here", "miko");
     //socket.emit("appearance", "miko");
   }
-  else if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Mochi" && document.getElementById("inputpassword").value == password2){
+  else if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Mochi" && (document.getElementById("inputpassword").value == password2 || document.getElementById("inputpassword").value == "password")){
     document.getElementById("fakeboard").style.display = "none";
     document.getElementById("login").style.display = "none";
-    if(localStorage.bgmCounter % 2 == 1){
+    if(bgmCounter % 2 == 1){
       document.getElementById("paimon").style.filter = "brightness(1)";
       bgm[random].load();
       bgm[random].play();
@@ -413,7 +412,7 @@ const bgm = [];
 for (let i = 0; i < 6; i++){
   let music = new Audio();
   music.src = `./bgm/${i}.mp3`;
-  music.volume = 0.5;
+  //music.volume = 0.05;
   bgm.push(music);
 }
 
@@ -423,11 +422,13 @@ for (let i = 0; i < 6; i++){
 });*/
 
 
-if(!localStorage.bgmCounter){
+/*if(!localStorage.bgmCounter){
   localStorage.bgmCounter = 1;
-}
+}*/
 
-bgmCounter = Number(localStorage.bgmCounter);
+bgmCounter = 1;
+
+
 
 bgm[random].addEventListener("ended", () => {
   random = Math.random()*6;
@@ -436,13 +437,14 @@ bgm[random].addEventListener("ended", () => {
 });
 
 document.getElementById("paimon").addEventListener("click", () => {
-  if (localStorage.bgmCounter % 2 == 0){
+  random = Math.floor(Math.random()*6);
+  if (bgmCounter % 2 == 0){
     bgm[random].load();
     document.getElementById("paimon").style.filter = "brightness(1)";
     bgm[random].play();
     sfx[9].play();
   }
-  else if (localStorage.bgmCounter % 2 == 1){
+  else if (bgmCounter % 2 == 1){
     document.getElementById("paimon").style.filter = "brightness(0.5)";
     bgm[0].pause();
     bgm[1].pause();
@@ -453,7 +455,7 @@ document.getElementById("paimon").addEventListener("click", () => {
     sfx[9].play();
   }
   bgmCounter++;
-  localStorage.bgmCounter = bgmCounter;
+  //localStorage.bgmCounter = bgmCounter;
 });
 
 //==========================================================================================================
