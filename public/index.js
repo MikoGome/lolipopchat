@@ -72,6 +72,9 @@ socket.on("chat", data => {
    else {
      sfx[5].play();
    }
+   if(document.visibilityState == "hidden"){
+     document.getElementById("icon").setAttribute("href", "./images/Icon_Archon_Quest.png");
+   }
   //message.scrollIntoView(false);
    }
 });
@@ -314,9 +317,11 @@ socket.on("typing", () => {
   }, 1500);
 });
 
-/*document.addEventListener("visibilitychange", () => {
-  socket.emit("away", document.visibilityState );
-}); */
+document.addEventListener("visibilitychange", () => {
+  if(document.visibilityState == "visible") {
+    document.getElementById("icon").setAttribute("href", "./images/ganyu_icon.png");
+  }
+});
 
 //let away1;
 socket.on("away", status => {
