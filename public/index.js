@@ -104,7 +104,7 @@ function validation(event) {
   document.getElementById("inputpassword").style.removeProperty("animation-name");
   document.getElementById("inputpassword").style.removeProperty("animation-duration");
   socket.emit("password");
-  if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Miko" && (document.getElementById("inputpassword").value == password1 || document.getElementById("inputpassword").value == "password")) {
+  if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Miko" && document.getElementById("inputpassword").value == password1) {
     document.getElementById("fakeboard").style.display = "none";
     document.getElementById("login").style.display = "none";
     document.getElementById("paimon").click();
@@ -119,7 +119,7 @@ function validation(event) {
     socket.emit("here", "miko");
     //socket.emit("appearance", "miko");
   }
-  else if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Mochi" && (document.getElementById("inputpassword").value == password2 || document.getElementById("inputpassword").value == "password")){
+  else if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Mochi" && document.getElementById("inputpassword").value == password2){
     document.getElementById("fakeboard").style.display = "none";
     document.getElementById("login").style.display = "none";
     document.getElementById("paimon").click();
