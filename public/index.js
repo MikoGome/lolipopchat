@@ -107,7 +107,7 @@ function validation(event) {
     document.getElementById("login").style.display = "none";
     if(bgmCounter % 2 == 1){
       document.getElementById("paimon").style.filter = "brightness(1)";
-      bgm[random].load();
+      //bgm[random].load();
       bgm[random].play();
     }
     selfBoxAppearanceMiko();
@@ -120,7 +120,7 @@ function validation(event) {
     document.getElementById("login").style.display = "none";
     if(bgmCounter % 2 == 1){
       document.getElementById("paimon").style.filter = "brightness(1)";
-      bgm[random].load();
+      //bgm[random].load();
       bgm[random].play();
     }
     selfBoxAppearanceMochi();
@@ -432,14 +432,14 @@ bgmCounter = 1;
 
 bgm[random].addEventListener("ended", () => {
   random = Math.random()*6;
-  bgm[random].load();
+  //bgm[random].load();
   bgm[random].play();
 });
 
 document.getElementById("paimon").addEventListener("click", () => {
   random = Math.floor(Math.random()*6);
   if (bgmCounter % 2 == 0){
-    bgm[random].load();
+    //bgm[random].load();
     document.getElementById("paimon").style.filter = "brightness(1)";
     bgm[random].play();
     sfx[9].play();
