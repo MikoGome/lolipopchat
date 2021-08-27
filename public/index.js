@@ -471,7 +471,7 @@ document.getElementById("paimon").addEventListener("click", () => {
   //localStorage.bgmCounter = bgmCounter;
 });
 
-window.addEventListner("load", () => {
+window.addEventListener("load", () => {
   console.log("loaded");
 });
 
