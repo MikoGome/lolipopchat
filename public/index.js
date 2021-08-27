@@ -406,7 +406,7 @@ const bgm = [];
 for (let i = 0; i < 6; i++){
   let music = new Audio();
   music.src = `./bgm/${i}.mp3`;
-  //music.volume = 0.05;
+  music.volume = 0.5;
   bgm.push(music);
 }
 
