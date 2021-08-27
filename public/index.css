@@ -5,8 +5,8 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
-  cursor: url(/images/ice_cursor.png) 2 8, auto;
-  cursor: url(/images/ice_cursor.png) 2 8, text;
+  /*cursor: url(/images/ice_cursor.png) 2 8, auto;
+  cursor: url(/images/ice_cursor.png) 2 8, text;*/
 }
 
 body {
