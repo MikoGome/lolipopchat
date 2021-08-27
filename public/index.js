@@ -89,6 +89,8 @@ function character_choose (element) {
   element.style.width = "80%";
   document.getElementById("identity").innerHTML = element.children[1].innerHTML;
   element.children[1].outerHTML = "<label>Password: <input type='password' autofocus id='inputpassword' onkeypress='validation(event)'></label>"
+  document.getElementById("paimon").click();
+  document.getElementById("paimon").click();
 }
 
 let password1;
@@ -476,10 +478,6 @@ document.getElementById("paimon").addEventListener("click", () => {
   localStorage.bgmCounter = bgmCounter;
 });
 
-function starter () {
-  document.getElementById("paimon").click();
-  document.getElementById("paimon").click();
-}
 
 //==========================================================================================================
 /*
