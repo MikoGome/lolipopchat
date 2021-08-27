@@ -441,7 +441,7 @@ document.getElementsByTagName("body")[0].addEventListener("load", () => {
   setTimeout( () => {bgm[random].load();}, 2000);
 });
 
-document.getElementById("paimon").addEventListener("click", () => {
+/*document.getElementById("paimon").addEventListener("click", () => {
   random = Math.floor(Math.random()*6);
   if (bgmCounter % 2 == 0){
     bgm[random].load();
@@ -473,7 +473,7 @@ document.getElementById("paimon").addEventListener("click", () => {
   }
   bgmCounter++;
   //localStorage.bgmCounter = bgmCounter;
-});
+});*/
 
 //==========================================================================================================
 /*
