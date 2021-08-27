@@ -439,14 +439,14 @@ bgm[random].addEventListener("ended", () => {
 document.getElementById("paimon").addEventListener("click", () => {
   random = Math.floor(Math.random()*6);
   if (bgmCounter % 2 == 0){
-    //bgm[random].load();
+    bgm[random].load();
     document.getElementById("paimon").style.filter = "brightness(1)";
     bgm[random].play();
     sfx[9].play();
   }
   else if (bgmCounter % 2 == 1){
     document.getElementById("paimon").style.filter = "brightness(0.5)";
-    /*if(!bgm[0].paused){
+    if(!bgm[0].paused){
       bgm[0].pause();
     }
     else if(!bgm[1].paused){
@@ -464,7 +464,7 @@ document.getElementById("paimon").addEventListener("click", () => {
     else if(!bgm[5].paused){
       bgm[5].pause();
     }
-    sfx[9].play();*/
+    sfx[9].play();
   }
   bgmCounter++;
   //localStorage.bgmCounter = bgmCounter;
