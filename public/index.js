@@ -192,12 +192,12 @@ for(let i = 0; i < 12; i++){
   voiceMochi.src = `./ganyu_voice/${i}.ogg`;
   //voiceMochi.volume = 0.15;
   voicesMochi.push(voiceMochi);
-  voicesMochi[i].load();
 }
 
 let randomSave = Math.floor(Math.random()*12);
 function mikoVoice () {
   voicesMiko[randomSave].pause();
+  voicesMiko[randomSave2].currentTime = 0;
   randomSave = Math.floor(Math.random()*12)
   //voicesMiko[randomSave].load();
   voicesMiko[randomSave].play();
@@ -207,6 +207,7 @@ function mikoVoice () {
 let randomSave2 = Math.floor(Math.random()*12);
 function mochiVoice () {
   voicesMochi[randomSave2].pause();
+  voicesMochi[randomSave2].currentTime = 0;
   randomSave2 = Math.floor(Math.random()*12)
   //voicesMochi[randomSave2].load();
   voicesMochi[randomSave2].play();
