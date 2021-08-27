@@ -331,6 +331,16 @@ li {
   scrollbar-width: none;  /* Firefox */
 }
 
+.goneexample::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.goneexample {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 #paimon {
   transition: all 0.5s;
   filter: brightness(0.5);
