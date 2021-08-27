@@ -4,7 +4,7 @@ let my_message;
 let soundCheck = false;
 let random = Math.floor(Math.random()*6);
 
-location.reload();
+window.location.reload(true);
 
 const sfx = [];
 
