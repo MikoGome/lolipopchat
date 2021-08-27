@@ -436,7 +436,7 @@ bgm[random].addEventListener("ended", () => {
   bgm[random].play();
 });
 
-/*document.getElementById("paimon").addEventListener("click", () => {
+document.getElementById("paimon").addEventListener("click", () => {
   random = Math.floor(Math.random()*6);
   if (localStorage.bgmCounter % 2 == 0){
     bgm[random].load();
@@ -474,7 +474,7 @@ bgm[random].addEventListener("ended", () => {
   }
   bgmCounter++;
   localStorage.bgmCounter = bgmCounter;
-});*/
+});
 
 //==========================================================================================================
 /*
