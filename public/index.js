@@ -4,6 +4,8 @@ let my_message;
 let soundCheck = false;
 let random = Math.floor(Math.random()*6);
 
+location.reload();
+
 const sfx = [];
 
 for(let i = 0; i < 10; i++){
