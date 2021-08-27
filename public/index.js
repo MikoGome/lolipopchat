@@ -412,6 +412,7 @@ const bgm = [];
 for (let i = 0; i < 6; i++){
   let music = new Audio();
   music.src = `./bgm/${i}.mp3`;
+  music.load();
   //music.volume = 0.05;
   bgm.push(music);
 }
@@ -427,8 +428,6 @@ for (let i = 0; i < 6; i++){
 }*/
 
 bgmCounter = 1;
-
-
 
 bgm[random].addEventListener("ended", () => {
   random = Math.random()*6;
