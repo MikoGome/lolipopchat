@@ -3,8 +3,9 @@ const socket = io.connect();
 let my_message;
 let soundCheck = false;
 let random = Math.floor(Math.random()*6);
-
+let randomAvailable = false;
 const sfx = [];
+let saver;
 
 for(let i = 0; i < 10; i++){
   let sound = new Audio();
@@ -109,11 +110,12 @@ function validation(event) {
     document.getElementById("login").style.display = "none";
     document.getElementById("paimon").click();
     document.getElementById("paimon").click();
-    if(localStorage.bgmCounter % 2 == 1){
+    randomAvailable = true;
+    /*if(localStorage.bgmCounter % 2 == 1){
       document.getElementById("paimon").style.filter = "brightness(1)";
       bgm[random].load();
       bgm[random].play();
-    }
+    }*/
     selfBoxAppearanceMiko();
     document.getElementById("message_write_box").focus();
     socket.emit("here", "miko");
@@ -124,11 +126,12 @@ function validation(event) {
     document.getElementById("login").style.display = "none";
     document.getElementById("paimon").click();
     document.getElementById("paimon").click();
-    if(localStorage.bgmCounter % 2 == 1){
+    randomAvailable = true;
+    /*if(localStorage.bgmCounter % 2 == 1){
       document.getElementById("paimon").style.filter = "brightness(1)";
       bgm[random].load();
       bgm[random].play();
-    }
+    }*/
     selfBoxAppearanceMochi();
     document.getElementById("message_write_box").focus();
     socket.emit("here", "mochi");
@@ -443,15 +446,23 @@ bgm[random].addEventListener("ended", () => {
 });
 
 document.getElementById("paimon").addEventListener("click", () => {
-  random = Math.floor(Math.random()*6);
+  if (randomAvailable) {
+    random = Math.floor(Math.random()*6);
+  }
   if (localStorage.bgmCounter % 2 == 0){
     bgm[random].load();
+    if(!randomAvailable) {
+      bgm[random].currentTime = saver;
+    }
     document.getElementById("paimon").style.filter = "brightness(1)";
     bgm[random].play();
     sfx[9].play();
   }
   else if (localStorage.bgmCounter % 2 == 1){
     document.getElementById("paimon").style.filter = "brightness(0.5)";
+    if(!randomAvailable) {
+      saver = bgm[random].currentTime;
+    }
     if(!bgm[0].paused){
       bgm[0].pause();
       bgm[random].load();
