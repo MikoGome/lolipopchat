@@ -5,7 +5,6 @@ let soundCheck = false;
 let random = Math.floor(Math.random()*6);
 let randomAvailable = false;
 const sfx = [];
-let saver;
 
 for(let i = 0; i < 10; i++){
   let sound = new Audio();
@@ -90,6 +89,7 @@ function character_choose (element) {
   element.style.width = "80%";
   document.getElementById("identity").innerHTML = element.children[1].innerHTML;
   element.children[1].outerHTML = "<label>Password: <input type='password' autofocus id='inputpassword' onkeypress='validation(event)'></label>"
+  bgm[random].muted = true;
   document.getElementById("paimon").click();
   document.getElementById("paimon").click();
 }
@@ -108,6 +108,8 @@ function validation(event) {
   if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Miko" && document.getElementById("inputpassword").value == password1) {
     document.getElementById("fakeboard").style.display = "none";
     document.getElementById("login").style.display = "none";
+    bgm[random].currentTime = 0;
+    bgm[random].muted = false;
     document.getElementById("paimon").click();
     document.getElementById("paimon").click();
     randomAvailable = true;
@@ -124,6 +126,8 @@ function validation(event) {
   else if(event.keyCode == 13 && document.getElementById("identity").innerHTML === "Mochi" && document.getElementById("inputpassword").value == password2){
     document.getElementById("fakeboard").style.display = "none";
     document.getElementById("login").style.display = "none";
+    bgm[random].currentTime = 0;
+    bgm[random].muted = false;
     document.getElementById("paimon").click();
     document.getElementById("paimon").click();
     randomAvailable = true;
@@ -451,18 +455,12 @@ document.getElementById("paimon").addEventListener("click", () => {
   }
   if (localStorage.bgmCounter % 2 == 0){
     bgm[random].load();
-    if(!randomAvailable) {
-      bgm[random].currentTime = saver;
-    }
     document.getElementById("paimon").style.filter = "brightness(1)";
     bgm[random].play();
     sfx[9].play();
   }
   else if (localStorage.bgmCounter % 2 == 1){
     document.getElementById("paimon").style.filter = "brightness(0.5)";
-    if(!randomAvailable) {
-      saver = bgm[random].currentTime;
-    }
     if(!bgm[0].paused){
       bgm[0].pause();
       bgm[random].load();
