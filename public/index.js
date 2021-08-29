@@ -464,27 +464,27 @@ document.getElementById("paimon").addEventListener("click", () => {
     document.getElementById("paimon").style.filter = "brightness(0.5)";
     if(!bgm[0].paused){
       bgm[0].pause();
-      bgm[random].load();
+      bgm[0].load();
     }
     else if(!bgm[1].paused){
       bgm[1].pause();
-      bgm[random].load();
+      bgm[1].load();
     }
     else if(!bgm[2].paused){
       bgm[2].pause();
-      bgm[random].load();
+      bgm[2].load();
     }
     else if(!bgm[3].paused){
       bgm[3].pause();
-      bgm[random].load();
+      bgm[3].load();
     }
     else if(!bgm[4].paused){
       bgm[4].pause();
-      bgm[random].load();
+      bgm[4].load();
     }
     else if(!bgm[5].paused){
       bgm[5].pause();
-      bgm[random].load();
+      bgm[5].load();
     }
     sfx[9].play();
   }
