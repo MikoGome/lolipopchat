@@ -367,3 +367,21 @@ li {
   object-fit: contain;
   height: 12vh;
 }
+
+#cleary {
+  filter: brightness(0.5);
+  position: absolute;
+  left: 4%;
+  display: inline-block;
+  height: 100%;
+}
+
+#cleary > img {
+  display: inline-block;
+  object-fit: contain;
+  height: 10vh;
+}
+
+#cleary:active {
+  filter: brightness(1);
+}
