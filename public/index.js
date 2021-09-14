@@ -492,6 +492,10 @@ document.getElementById("paimon").addEventListener("click", () => {
   localStorage.bgmCounter = bgmCounter;
 });
 
+document.getElementById("cleary").addEventListener("click", () => {
+  document.getElementById("message_box").innerHTML = "";
+});
+
 
 //==========================================================================================================
 /*
