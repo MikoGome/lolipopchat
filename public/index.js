@@ -494,6 +494,7 @@ document.getElementById("paimon").addEventListener("click", () => {
 
 document.getElementById("cleary").addEventListener("click", () => {
   document.getElementById("message_box").innerHTML = "";
+  sfx[6].play();
 });
 
 
